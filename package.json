@@ -64,14 +64,9 @@
     "prisma": "2.20.1",
     "typescript": "4.2.3"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --pattern \"**/*.*(ts|tsx|graphql)\" --staged"
-    }
-  },
   "cacheDirectories": [
     ".next/cache"
   ],
-  "repository": "",
+  "repository": "https://github.com/Balance8/full-stack-boilerplate",
   "description": "new NodeJs Prisma GraphQL TypeScript project"
 }
