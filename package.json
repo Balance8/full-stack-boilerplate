@@ -7,7 +7,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "generate": "yarn generate:prisma && yarn generate:nexus && yarn codegen",
+    "generate": "npm run generate:prisma && npm run generate:nexus && npm run codegen",
     "generate:prisma": "prisma generate",
     "generate:nexus": "ts-node --transpile-only -P nexus.tsconfig.json src/Api/nexusSchema",
     "codegen": "graphql-codegen --config codegen.yml",
