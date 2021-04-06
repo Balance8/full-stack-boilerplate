@@ -7,7 +7,7 @@ export const Comment = objectType({
   },
   name: 'Comment',
   definition(t) {
-    t.int('id')
+    t.string('id')
     t.string('contain')
     t.field('post', {
       type: 'Post',
@@ -15,14 +15,14 @@ export const Comment = objectType({
         return root.post
       },
     })
-    t.int('postId')
+    t.string('postId')
     t.nullable.field('author', {
       type: 'User',
       resolve(root: any) {
         return root.author
       },
     })
-    t.nullable.int('authorId')
+    t.nullable.string('authorId')
     t.field('createdAt', { type: 'DateTime' })
     t.field('updatedAt', { type: 'DateTime' })
   },

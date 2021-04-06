@@ -9,7 +9,7 @@ generator client {
 
 // models examples
 model User {
-  id        Int       @id @default(autoincrement())
+  id        String    @id @default(cuid())
   createdAt DateTime  @default(now())
   email     String    @unique
   name      String?
@@ -17,17 +17,17 @@ model User {
   /// @onDelete(CASCADE)
   posts     Post[]
   group     Group?    @relation(fields: [groupId], references: [id])
-  groupId   Int?
+  groupId   String?
   /// @onDelete(SET_NULL)
   comments  Comment[]
 }
 
 model Post {
-  id        Int       @id @default(autoincrement())
+  id        String    @id @default(cuid())
   published Boolean   @default(false)
   title     String
   author    User?     @relation(fields: [authorId], references: [id])
-  authorId  Int?
+  authorId  String?
   /// @onDelete(CASCADE)
   comments  Comment[]
   createdAt DateTime  @default(now())
@@ -35,18 +35,18 @@ model Post {
 }
 
 model Comment {
-  id        Int      @id @default(autoincrement())
+  id        String   @id @default(cuid())
   contain   String
   post      Post     @relation(fields: [postId], references: [id])
-  postId    Int
+  postId    String
   author    User?    @relation(fields: [authorId], references: [id])
-  authorId  Int?
+  authorId  String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
 model Group {
-  id        Int      @id @default(autoincrement())
+  id        String   @id @default(cuid())
   name      String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

@@ -7,7 +7,7 @@ export const Post = objectType({
   },
   name: 'Post',
   definition(t) {
-    t.int('id')
+    t.string('id')
     t.boolean('published')
     t.string('title')
     t.nullable.field('author', {
@@ -16,7 +16,7 @@ export const Post = objectType({
         return root.author
       },
     })
-    t.nullable.int('authorId')
+    t.nullable.string('authorId')
     t.list.field('comments', {
       type: 'Comment',
       args: {

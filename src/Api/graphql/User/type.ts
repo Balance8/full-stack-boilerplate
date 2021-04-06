@@ -7,7 +7,7 @@ export const User = objectType({
   },
   name: 'User',
   definition(t) {
-    t.int('id')
+    t.string('id')
     t.field('createdAt', { type: 'DateTime' })
     t.string('email')
     t.nullable.string('name')
@@ -32,7 +32,7 @@ export const User = objectType({
         return root.group
       },
     })
-    t.nullable.int('groupId')
+    t.nullable.string('groupId')
     t.list.field('comments', {
       type: 'Comment',
       args: {

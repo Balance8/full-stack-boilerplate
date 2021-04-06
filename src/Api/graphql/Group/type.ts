@@ -7,7 +7,7 @@ export const Group = objectType({
   },
   name: 'Group',
   definition(t) {
-    t.int('id')
+    t.string('id')
     t.string('name')
     t.field('createdAt', { type: 'DateTime' })
     t.field('updatedAt', { type: 'DateTime' })
