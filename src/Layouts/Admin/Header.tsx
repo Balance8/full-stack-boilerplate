@@ -136,11 +136,11 @@ const Header: React.FC<HeaderProps> = (props) => {
           actions={[
             {
               icon: 'github',
-              url: { href: 'https://github.com/paljs', target: '_blank' },
+              url: { href: 'https://github.com/Balance8', target: '_blank' },
             },
             {
               icon: 'twitter',
-              url: { href: 'https://twitter.com/AhmedElywh', target: '_blank' },
+              url: { href: 'https://twitter.com/Balance__8', target: '_blank' },
             },
             {
               content: me && <User name={me.name!} title="Manager" size="Medium" />,
